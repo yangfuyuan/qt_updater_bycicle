@@ -5,8 +5,21 @@ Another qt updater
 
 This is a simple to use and probably another new bycicle called <b>qt_updater</b>.
 <br /><br />
-As you can understand from its name — it a <i>bycicle</i> is for Qt platform. Also, it was written in Qt Creator 5.2 with C++11 standard so 
-be sure that you are using all this stuff.
+As you can understand from its name — it a <i>bycicle</i> is for Qt platform. Also, it was written in Qt Creator 5.2 with C++11 standard so be sure that you are using all this stuff.
+<br /><br />
+<b>Important (for non rus-speakers)</b>
+<i>There is some error messages with tr() but on russian language.</i>
+
+# What is this thing for?
+This updater simply check the version of your program or whatever on the server, compare current version and available and, if there is a newer, return a window with information (by load an html page) about it and a source (button) to setup file or something you want with starts it after download.
+
+# How does it works?
+For complete using of this project, you must do only two important things:
+<ol>
+<li>Create on your server side a file with information about your program version (in JSON format, see <a href="https://github.com/someoneinthebox/qt_updater_bycicle/wiki" target="_blank"><b>wiki</b></a> for more);</li>
+<li>Create simple html page with all information you wants about this version or whatever.</li>
+</ol>
+After that, you can just create a new object of <b>UpdaterGui</b> class, connect all signals you needed from updater and call <b>checkUpdate()</b> function. That's all.
 
 # Quick Start
 For use this project you can just add its <i><b>updater.pri</b></i> file to your <b>.pro</b> file, add all not included dependences and 
