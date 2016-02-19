@@ -8,6 +8,7 @@ This is a simple to use and probably another new bycicle called <b>qt_updater</b
 As you can understand from its name — it a <i>bycicle</i> is for Qt platform. Also, it was written in Qt Creator 5.2 with C++11 standard so be sure that you are using all this stuff.
 <br /><br />
 <b>Important (for non rus-speakers)</b>
+<br />
 <i>There is some error messages with tr() but on russian language.</i>
 
 # What is this thing for?
