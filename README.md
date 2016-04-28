@@ -5,7 +5,7 @@ Another qt updater
 
 This is a simple to use and probably another new bycicle called <b>qt_updater</b>.
 <br /><br />
-As you can understand from its name — it a <i>bycicle</i> is for Qt platform. Also, it was written in Qt Creator 5.2 with C++11 standard so be sure that you are using all this stuff.
+As you can understand from its name — it a <i>bycicle</i> is for Qt platform. Also, it was written in Qt 5.4 with C++11 standard so be sure that you are using all this stuff. Note, that since Qt 5.6 WebkitWidgets module is not include.
 <br /><br />
 <b>Important (for non rus-speakers)</b>
 <br />
