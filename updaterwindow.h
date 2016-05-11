@@ -10,8 +10,6 @@
 #include <QUrl>
 #include <QDialogButtonBox>
 #include <QSpacerItem>
-#include <QWebView>
-
 /*!
  * \brief The UpdaterWindow class
  * Класс, отрисовывающий пользовательский интерфейс информации об обновлении
@@ -19,9 +17,8 @@
 class UpdaterWindow : public QWidget
 {
     Q_OBJECT
-    QWebView *_webInfo;
 public:
-    explicit UpdaterWindow(const QString &programName, const QString &version, const QUrl &updateText,
+    explicit UpdaterWindow(const QString &programName, const QString &version, QList<QVariant> updateText,
                            const QString &curVersion, QWidget *parent = 0);
     ~UpdaterWindow();
 

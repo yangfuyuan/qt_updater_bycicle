@@ -3,7 +3,7 @@
 
     programName: "Name"         - наименование программы
     version: "1.0.0.0"          - версия программы
-    desc: "url-to-update-text"  - url к html странице с описанием изменений
+    desc: ["some_update_info_1", "some_update_info_2"]  - array с описанием обновлений
     updateDownload: "url"       - url к обновлению
     updateFile: "filename"      - имя файла обновления с расширением
 
@@ -11,7 +11,7 @@
     {
         "programName": "Programma",
         "version": "1.0.0.0",
-        "desc": "http://site.com/update/release.html",
+        "desc": ["<h1>Hello world</h1>", "test", "<ul><li>One</li><li>Two</li><li>Three</li></ul>"],
         "updateDownload": "https://some-site.com/cloud/hfhg734jH/download",
         "updateFile": "update.exe"
     }

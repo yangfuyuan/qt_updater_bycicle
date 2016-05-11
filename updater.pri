@@ -1,4 +1,5 @@
 INCLUDEPATH += $$PWD
+
 HEADERS += \
     $$PWD/updater.h \
     $$PWD/updatergui.h \
@@ -10,3 +11,7 @@ SOURCES += \
     $$PWD/updatergui.cpp \
     $$PWD/updaterwindow.cpp \
     $$PWD/downloader.cpp
+
+DISTFILES +=
+
+RESOURCES +=

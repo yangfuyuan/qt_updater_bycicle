@@ -8,7 +8,7 @@ UpdaterGui::UpdaterGui(quint16 version[], const QUrl &url, QObject *parent)
     {
         UpdaterWindow *window = new UpdaterWindow(versionMap.value("programName").toString(),
                                                   versionMap.value("version").toString(),
-                                                  QUrl(versionMap.value("desc").toString()),
+                                                  versionMap.value("desc").toList(),
                                                   curVersion());
         connect(window, &UpdaterWindow::downloadUpdate, this, &UpdaterGui::download);        
         connect(this, &Updater::unableToOpenFile, [=] {

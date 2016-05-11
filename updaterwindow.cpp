@@ -1,6 +1,6 @@
 #include "updaterwindow.h"
 
-UpdaterWindow::UpdaterWindow(const QString &programName, const QString &version, const QUrl &updateText,
+UpdaterWindow::UpdaterWindow(const QString &programName, const QString &version, QList<QVariant> updateText,
                              const QString &curVersion, QWidget *parent)
     : QWidget(parent, Qt::Dialog | Qt::WindowTitleHint | Qt::WindowCloseButtonHint)
 {
@@ -12,21 +12,18 @@ UpdaterWindow::UpdaterWindow(const QString &programName, const QString &version,
     setLayout(layout);
     setMaximumSize(800, 600);
 
-    /*
-     * QWebView страдает утечками памяти типа ChachedResource
-     * на некоторых страницах, но только при закрытии главного приложения
-    */
-    _webInfo = new QWebView(this);
-    _webInfo->load(updateText);
-    _webInfo->setContextMenuPolicy(Qt::NoContextMenu);
-    _webInfo->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
     QGroupBox *infoGb = new QGroupBox(tr("Информация об обновлении"), this);
     QVBoxLayout *infoLay = new QVBoxLayout();
     infoGb->setLayout(infoLay);
     QString versionString = tr("Ваша версия <b>%1</b>, доступная версия <b>%2</b>");
     QLabel *infoLabel = new QLabel(versionString.arg(curVersion, version), this);
+    QString descString;
+    foreach(QVariant string, updateText)
+        descString += string.toString() + "\n\n";
+    QLabel *descLabel = new QLabel(descString, this);
+    descLabel->setWordWrap(true);
     infoLay->addWidget(infoLabel);
-    infoLay->addWidget(_webInfo);
+    infoLay->addWidget(descLabel);
     infoLay->addItem(new QSpacerItem(0,0,QSizePolicy::Expanding, QSizePolicy::Expanding));
 
     QHBoxLayout *actionsLay = new QHBoxLayout();

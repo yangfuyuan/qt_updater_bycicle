@@ -51,7 +51,12 @@ void Updater::checkVersion()
         if(fullVersion() < strToIntVrs(version)) {
             map.insert("programName", obj.take("programName"));
             map.insert("version", version);
-            map.insert("desc", obj.take("desc"));
+            QList<QVariant> list;
+            QJsonArray arr = obj.take("desc").toArray();
+            for(int i = 0; i < arr.size(); i++)
+                list << arr.at(i).toVariant();
+
+            map.insert("desc", list);
 
             _downloadLink = QUrl(obj.take("updateDownload").toString());
             _fileName = obj.take("updateFile").toString();
